@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "author": "Hỷ Chung",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -105.3, "left": -91.8, "attrs": {} },
+    {
+      "type": "wokwi-lcd1602",
+      "id": "lcd1",
+      "top": 16,
+      "left": 264.8,
+      "attrs": { "pins": "i2c" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn1",
+      "top": 121.4,
+      "left": 144,
+      "attrs": { "color": "green", "xray": "1" }
+    },
+    { "type": "wokwi-gnd", "id": "gnd1", "top": 9.6, "left": -58.2, "attrs": {} },
+    { "type": "wokwi-gnd", "id": "gnd2", "top": -38.4, "left": 114.6, "attrs": {} },
+    { "type": "wokwi-gnd", "id": "gnd3", "top": 86.4, "left": 210.6, "attrs": {} },
+    { "type": "wokwi-gnd", "id": "gnd4", "top": 172.8, "left": 210, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:5V", "lcd1:VCC", "red", [ "h-33.41", "v48", "h278.4", "v-192.1" ] ],
+    [ "dht1:GND", "gnd1:GND", "black", [ "v0" ] ],
+    [ "esp:GND.2", "gnd2:GND", "black", [ "v0" ] ],
+    [ "lcd1:GND", "gnd3:GND", "black", [ "h0" ] ],
+    [ "esp:18", "btn1:1.l", "orange", [ "h43.24", "v38.4" ] ],
+    [ "btn1:2.r", "gnd4:GND", "black", [ "h0" ] ],
+    [ "esp:3V3", "dht1:VCC", "red", [ "h-23.81", "v28.8", "h-57.6" ] ],
+    [ "esp:15", "dht1:SDA", "green", [ "h24.04", "v57.6", "h-192.1" ] ],
+    [ "lcd1:SDA", "esp:21", "green", [ "h-105.6", "v9.8" ] ],
+    [ "lcd1:SCL", "esp:22", "purple", [ "h-86.4", "v-28.5" ] ]
+  ],
+  "dependencies": {}
+}
