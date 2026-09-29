@@ -1,0 +1,27 @@
+$kind: http-request
+name: https://webhook.site/c4c48a0a-9466-4c68-8b73-92daeb1b320a
+description: ""
+url: https://webhook.site/c4c48a0a-9466-4c68-8b73-92daeb1b320a
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"timestamp\": \"2026-09-29T11:20:00Z\",\r
+
+    \  \"node_id\": \"ESP32_NODE_01\",\r
+
+    \  \"sensors\": {\r
+
+    \    \"temperature\": 28.5,\r
+
+    \    \"humidity\": 65.2,\r
+
+    \    \"light_intensity\": 450\r
+
+    \  },\r
+
+    \  \"battery_level\": 92\r
+
+    }"
+order: 1790655787011

@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "author": "Hỷ Chung",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    {
+      "type": "board-ssd1306",
+      "id": "oled1",
+      "top": 70.34,
+      "left": 230.63,
+      "attrs": { "i2cAddress": "0x3c" }
+    },
+    { "type": "wokwi-gnd", "id": "gnd1", "top": -19.2, "left": 114.6, "attrs": {} },
+    { "type": "wokwi-gnd", "id": "gnd2", "top": 76.8, "left": 191.4, "attrs": {} },
+    { "type": "wokwi-vcc", "id": "vcc1", "top": 154.36, "left": -28.8, "attrs": {} },
+    { "type": "wokwi-vcc", "id": "vcc2", "top": 0.76, "left": 268.8, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "gnd2:GND", "oled1:GND", "black", [ "v-9.6", "h67.2" ] ],
+    [ "esp:21", "oled1:SDA", "magenta", [ "h0" ] ],
+    [ "esp:22", "oled1:SCL", "green", [ "h0" ] ],
+    [ "esp:GND.2", "gnd1:GND", "black", [ "v0" ] ],
+    [ "esp:5V", "vcc1:VCC", "red", [ "h0" ] ],
+    [ "vcc2:VCC", "oled1:VCC", "red", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}

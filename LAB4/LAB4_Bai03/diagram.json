@@ -1,0 +1,20 @@
+{
+  "version": 1,
+  "author": "Hỷ Chung",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 0, "left": 100.84, "attrs": {} },
+    { "type": "wokwi-dht22", "id": "dht1", "top": -18.9, "left": -34.2, "attrs": {} },
+    { "type": "wokwi-gnd", "id": "gnd1", "top": 105.6, "left": -0.6, "attrs": {} },
+    { "type": "wokwi-gnd", "id": "gnd2", "top": 172.8, "left": 66.6, "attrs": {} }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "dht1:GND", "gnd1:GND", "black", [ "v0" ] ],
+    [ "esp:GND.1", "gnd2:GND", "black", [ "h0" ] ],
+    [ "dht1:SDA", "esp:15", "green", [ "v0" ] ],
+    [ "dht1:VCC", "esp:3V3", "red", [ "h-48", "v-134.4", "h172.65" ] ]
+  ],
+  "dependencies": {}
+}

@@ -1,0 +1,15 @@
+$kind: http-request
+name: https://webhook.site/c4c48a0a-9466-4c68-8b73-92daeb1b320a
+description: ""
+url: https://webhook.site/c4c48a0a-9466-4c68-8b73-92daeb1b320a
+method: POST
+body:
+  type: json
+  content: "{\r
+
+    \  \"device_id\": \"sensor_01\",\r
+
+    \  \"temperature\": 25.5\r
+
+    }"
+order: 1790655726797
